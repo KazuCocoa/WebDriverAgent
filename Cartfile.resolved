@@ -1,3 +1,3 @@
-git "/Users/kazu/GitHub/YYCache" "06a2997117dd587e6a3206f19ad808993703b69f"
+github "KazuCocoa/YYCache" "7851d93f58eaa93f845bc250edfc5315ce486ff0"
 github "appium/RoutingHTTPServer" "v1.0.2"
 github "robbiehanson/CocoaAsyncSocket" "7.6.3"
