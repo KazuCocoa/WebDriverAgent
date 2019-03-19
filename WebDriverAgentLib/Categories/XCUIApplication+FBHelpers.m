@@ -168,4 +168,13 @@ const static NSTimeInterval FBMinimumAppSwitchWait = 3.0;
           fb_firstMatch];
 }
 
+#if TARGET_OS_TV
+- (XCUIElement *)fb_focusedElement
+{
+  return [[[self descendantsMatchingType:XCUIElementTypeAny]
+           matchingPredicate:[NSPredicate predicateWithFormat:@"hasFocus == true"]]
+          fb_firstMatch];
+}
+#endif
+
 @end
