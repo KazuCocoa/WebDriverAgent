@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <XCTest/XCUIElement.h>
-#import "FBElement.h"
+#import <WebDriverAgentLib/FBElement.h>
 
 typedef NS_ENUM(NSUInteger, FBTVDirection) {
   FBTVDirectionUp     = 0,
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FBTVNavigationTracker : NSObject
 
-  +(instancetype)trackerWithTargetElement: (id<FBElement>) targetElement;
+  +(instancetype)trackerWithTargetElement: (XCUIElement *) targetElement;
 
   -(FBTVDirection)directionToMoveFocuse;
 
