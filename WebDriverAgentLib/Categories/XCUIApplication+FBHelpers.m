@@ -37,7 +37,7 @@ const static NSTimeInterval FBMinimumAppSwitchWait = 3.0;
     [self fb_activate];
     return YES;
   }
-  return [[FBSpringboardApplication fb_springboard] fb_tapApplicationWithIdentifier:applicationIdentifier error:error];
+  return [[FBSpringboardApplication fb_springboard] fb_openApplicationWithIdentifier:applicationIdentifier error:error];
 }
 
 - (NSDictionary *)fb_tree
@@ -91,6 +91,10 @@ const static NSTimeInterval FBMinimumAppSwitchWait = 3.0;
   info[@"frame"] = NSStringFromCGRect(snapshot.wdFrame);
   info[@"isEnabled"] = [@([snapshot isWDEnabled]) stringValue];
   info[@"isVisible"] = [@([snapshot isWDVisible]) stringValue];
+
+#if TARGET_OS_TV
+  info[@"isFocused"] = [@([snapshot isWDFocused]) stringValue];
+#endif
 
   if (!recursive) {
     return info.copy;
