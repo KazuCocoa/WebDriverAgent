@@ -1,4 +1,14 @@
 #if TARGET_OS_SIMULATOR
+@interface UIKeyboardTaskQueue : NSObject
+/*
+ Hint for key typing:  https://github.com/wix/Detox/pull/1480/files
+ Maybe, if we do not need FB keyboard or can replave it with official APIs, we can re-implement them as this way.
+ */
+
+- (void)performTask:(void (^)(id ctx))arg1;
+- (void)waitUntilAllTasksAreFinished;
+@end
+
 /**
  * iOS-Runtime-Headers/PrivateFrameworks/UIKitCore.framework/UIKeyboardImpl.h
  */
@@ -13,5 +23,15 @@
  * @param enabled Whether turn setAutomaticMinimizationEnabled on
  */
 - (void)setAutomaticMinimizationEnabled:(BOOL)enabled;
+
+
+/*
+ Hint for key typing:  https://github.com/wix/Detox/pull/1480/files
+ Maybe, if we do not need FB keyboard or can replave it with official APIs, we can re-implement them as this way.
+ */
+@property(readonly, nonatomic) UIKeyboardTaskQueue *taskQueue;
+- (void)handleKeyWithString:(id)arg1 forKeyEvent:(id)arg2 executionContext:(id)arg3;
+- (void)setShift:(_Bool)arg1 autoshift:(_Bool)arg2;
 @end
+
 #endif  // TARGET_IPHONE_SIMULATOR
