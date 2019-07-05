@@ -205,8 +205,11 @@ static NSTimeInterval FBSnapshotTimeout = 15.;
   void *handle = dlopen(controllerPrefBundlePath, RTLD_LAZY);
 
   Class controllerClass = NSClassFromString(controllerClassName);
+  Class settingsClass = NSClassFromString(@"AXSettings");
 
   TIPreferencesController *controller = [controllerClass sharedPreferencesController];
+  AXSettings *settings = [settingsClass sharedInstance];
+
   // Auto-Correction in Keyboards
   if ([controller respondsToSelector:@selector(setAutocorrectionEnabled:)]) {
     controller.autocorrectionEnabled = NO;
@@ -228,6 +231,12 @@ static NSTimeInterval FBSnapshotTimeout = 15.;
   if (isSDKVersionGreaterThanOrEqualTo(@"13.0")) {
     [controller setValue:@YES forPreferenceKey:@"DidShowContinuousPathIntroduction"];
   }
+
+  [settings setVoiceOverEnabled: YES];
+//  @property BOOL voiceOverEnabled;
+//
+//  - (void)setVoiceOverEnabled:(BOOL)arg1;
+
   [controller synchronizePreferences];
 
   dlclose(handle);

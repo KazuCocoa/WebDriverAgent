@@ -43,3 +43,14 @@
  */
 - (BOOL)boolForPreferenceKey:(NSString *)key;
 @end
+
+/*
+ AccessibilityUtilities.framework/AXSettings.h
+ */
+@interface AXSettings : NSObject
+
+@property BOOL voiceOverEnabled;
+
+- (void)setVoiceOverEnabled:(BOOL)arg1;
+
+@end
