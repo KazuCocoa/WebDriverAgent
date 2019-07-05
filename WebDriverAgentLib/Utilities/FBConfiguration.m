@@ -232,7 +232,20 @@ static NSTimeInterval FBSnapshotTimeout = 15.;
     [controller setValue:@YES forPreferenceKey:@"DidShowContinuousPathIntroduction"];
   }
 
-  [settings setVoiceOverEnabled: YES];
+  // 2019-07-05 11:48:00.999935+0900 WebDriverAgentRunner-Runner[6203:4414200] [User Defaults] Couldn't write value for key VoiceOverTouchEnabled in CFPrefsPlistSource<0x2814a4d80> (Domain: com.apple.Accessibility, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No): setting preferences outside an application's container requires user-preference-write or file-write-data sandbox access
+  settings.voiceOverEnabled;
+  [settings setVoiceOverEnabled: true];
+  settings.voiceOverEnabled;
+
+  if ([settings respondsToSelector:@selector(setVoiceOverEnabled:)]) {
+    settings.voiceOverEnabled = YES;
+  } else {
+    [controller setValue:@NO forPreferenceKey:FBKeyboardPredictionKey];
+  }
+//  [settings setVoiceOverEnabledThroughAccessory: true];
+
+//  [settings setValue:@YES forKey:@"VoiceOver"];
+
 //  @property BOOL voiceOverEnabled;
 //
 //  - (void)setVoiceOverEnabled:(BOOL)arg1;

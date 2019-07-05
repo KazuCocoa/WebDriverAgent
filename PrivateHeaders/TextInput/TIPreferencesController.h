@@ -51,6 +51,8 @@
 
 @property BOOL voiceOverEnabled;
 
-- (void)setVoiceOverEnabled:(BOOL)arg1;
++ (id)sharedInstance;
+
+- (void)setZoomEnabled:(BOOL)arg1;
 
 @end
