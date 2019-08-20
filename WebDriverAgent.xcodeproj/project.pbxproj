@@ -404,6 +404,8 @@
 		71BD20741F86116100B36EC2 /* XCUIApplication+FBTouchAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD20721F86116100B36EC2 /* XCUIApplication+FBTouchAction.m */; };
 		71BD20781F869E0F00B36EC2 /* FBAppiumTouchActionsIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD20771F869E0F00B36EC2 /* FBAppiumTouchActionsIntegrationTests.m */; };
 		71DC3003208759E1007671AA /* RoutingHTTPServer.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		722ACE01230C44D400E2586A /* UIMotionEventProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ACE00230C44D400E2586A /* UIMotionEventProxy.h */; };
+		722ACE02230C44D400E2586A /* UIMotionEventProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ACE00230C44D400E2586A /* UIMotionEventProxy.h */; };
 		AD35D01A1CF1418E00870A75 /* RoutingHTTPServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D0641CF1C2C300870A75 /* RoutingHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; };
 		AD35D06C1CF1C35500870A75 /* WebDriverAgentLib.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = EE158A991CBD452B00A3E3F0 /* WebDriverAgentLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -916,6 +918,7 @@
 		71BD20721F86116100B36EC2 /* XCUIApplication+FBTouchAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XCUIApplication+FBTouchAction.m"; sourceTree = "<group>"; };
 		71BD20771F869E0F00B36EC2 /* FBAppiumTouchActionsIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBAppiumTouchActionsIntegrationTests.m; sourceTree = "<group>"; };
 		71E504941DF59BAD0020C32A /* XCUIElementAttributesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCUIElementAttributesTests.m; sourceTree = "<group>"; };
+		722ACE00230C44D400E2586A /* UIMotionEventProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIMotionEventProxy.h; sourceTree = "<group>"; };
 		AD42DD2A1CF121E600806E5D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutingHTTPServer.framework; path = Carthage/Build/iOS/RoutingHTTPServer.framework; sourceTree = "<group>"; };
 		AD6C26921CF2379700F8B5FF /* FBAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBAlert.h; path = WebDriverAgentLib/FBAlert.h; sourceTree = SOURCE_ROOT; };
@@ -1318,6 +1321,7 @@
 			isa = PBXGroup;
 			children = (
 				648C10AA22AAAD9C00B81B9A /* UIKeyboardImpl.h */,
+				722ACE00230C44D400E2586A /* UIMotionEventProxy.h */,
 			);
 			path = UIKitCore;
 			sourceTree = "<group>";
@@ -2125,6 +2129,7 @@
 				641EE6D22240C5CA00173FCB /* XCTestWaiter.h in Headers */,
 				641EE6D32240C5CA00173FCB /* FBImageUtils.h in Headers */,
 				641EE6D42240C5CA00173FCB /* NSValue-XCTestAdditions.h in Headers */,
+				722ACE02230C44D400E2586A /* UIMotionEventProxy.h in Headers */,
 				641EE6D52240C5CA00173FCB /* _XCTWaiterImpl.h in Headers */,
 				641EE6D62240C5CA00173FCB /* FBLogger.h in Headers */,
 				641EE6D72240C5CA00173FCB /* XCTestObserver.h in Headers */,
@@ -2292,6 +2297,7 @@
 				710C16CD21497A08006EA1D0 /* XCAccessibilityElement+FBComparison.h in Headers */,
 				EE35AD661E3B77D600A02D78 /* XCTWaiterDelegate-Protocol.h in Headers */,
 				EE35AD0E1E3B77D600A02D78 /* _XCTestExpectationImplementation.h in Headers */,
+				722ACE01230C44D400E2586A /* UIMotionEventProxy.h in Headers */,
 				EE35AD291E3B77D600A02D78 /* XCAXClient_iOS.h in Headers */,
 				EE35AD691E3B77D600A02D78 /* XCTWaiterManager.h in Headers */,
 				EE35AD481E3B77D600A02D78 /* XCTestDriverInterface-Protocol.h in Headers */,

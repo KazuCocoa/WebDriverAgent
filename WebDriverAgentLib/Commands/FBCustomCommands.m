@@ -10,6 +10,7 @@
 #import "FBCustomCommands.h"
 
 #import <XCTest/XCUIDevice.h>
+#import "UIMotionEventProxy.h"
 
 #import "FBApplication.h"
 #import "FBConfiguration.h"
@@ -58,6 +59,8 @@
     [[FBRoute POST:@"/wda/siri/activate"] respondWithTarget:self action:@selector(handleActivateSiri:)],
     [[FBRoute POST:@"/wda/apps/launchUnattached"].withoutSession respondWithTarget:self action:@selector(handleLaunchUnattachedApp:)],
     [[FBRoute GET:@"/wda/device/info"] respondWithTarget:self action:@selector(handleGetDeviceInfo:)],
+    [[FBRoute GET:@"/wda/shake"].withoutSession respondWithTarget:self action:@selector(handleShake:)],
+    [[FBRoute GET:@"/wda/shake"] respondWithTarget:self action:@selector(handleShake:)],
   ];
 }
 
@@ -276,6 +279,19 @@
                                withDescription:@"LSApplicationWorkspace failed to launch app"]
                               build]);
 }
+
++ (id<FBResponsePayload>)handleShake:(FBRouteRequest *)request
+{
+  UIMotionEventProxy *m = [[NSClassFromString(@"UIMotionEvent") alloc] _init];
+  [m setShakeState:1];
+  [m _setSubtype:UIEventSubtypeMotionShake];
+
+  [[UIApplication sharedApplication] sendEvent:m];
+  [[[UIApplication sharedApplication] keyWindow] motionBegan:UIEventSubtypeMotionShake withEvent:m];
+  [[[UIApplication sharedApplication] keyWindow] motionEnded:UIEventSubtypeMotionShake withEvent:m];
+  return FBResponseWithOK();
+}
+
 
 + (id<FBResponsePayload>)handleGetDeviceInfo:(FBRouteRequest *)request
 {
