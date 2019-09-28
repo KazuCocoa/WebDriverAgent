@@ -12,6 +12,7 @@
 #import "AXSettings.h"
 #import "UIKeyboardImpl.h"
 #import "TIPreferencesController.h"
+#import "BFFSettingsManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

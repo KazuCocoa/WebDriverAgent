@@ -304,6 +304,8 @@
 		641EE70F2240CE4800173FCB /* FBTVNavigationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 641EE70D2240CE4800173FCB /* FBTVNavigationTracker.m */; };
 		641EE7172240DE8C00173FCB /* RoutingHTTPServer.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 641EE7122240DE5E00173FCB /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		641EE7192240DFC100173FCB /* RoutingHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641EE7122240DE5E00173FCB /* RoutingHTTPServer.framework */; };
+		642FE7F0233F2207001C6B17 /* BFFSettingsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 642FE7EF233F2207001C6B17 /* BFFSettingsManager.h */; };
+		642FE7F1233F2207001C6B17 /* BFFSettingsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 642FE7EF233F2207001C6B17 /* BFFSettingsManager.h */; };
 		644D9CCE230E1F1A00C90459 /* FBConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 644D9CCD230E1F1A00C90459 /* FBConfigurationTests.m */; };
 		648C10AB22AAAD9C00B81B9A /* UIKeyboardImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 648C10AA22AAAD9C00B81B9A /* UIKeyboardImpl.h */; };
 		648C10AC22AAAD9C00B81B9A /* UIKeyboardImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 648C10AA22AAAD9C00B81B9A /* UIKeyboardImpl.h */; };
@@ -844,6 +846,7 @@
 		641EE70D2240CE4800173FCB /* FBTVNavigationTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBTVNavigationTracker.m; sourceTree = "<group>"; };
 		641EE7122240DE5E00173FCB /* RoutingHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutingHTTPServer.framework; path = Carthage/Build/tvOS/RoutingHTTPServer.framework; sourceTree = "<group>"; };
 		641EE73A2240F49D00173FCB /* YYCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYCache.framework; path = Carthage/Build/tvOS/YYCache.framework; sourceTree = "<group>"; };
+		642FE7EF233F2207001C6B17 /* BFFSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFSettingsManager.h; sourceTree = "<group>"; };
 		644D9CCD230E1F1A00C90459 /* FBConfigurationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBConfigurationTests.m; sourceTree = "<group>"; };
 		648C10AA22AAAD9C00B81B9A /* UIKeyboardImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKeyboardImpl.h; sourceTree = "<group>"; };
 		648C10AE22AAAE4000B81B9A /* TIPreferencesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIPreferencesController.h; sourceTree = "<group>"; };
@@ -1335,6 +1338,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		642FE7EE233F21ED001C6B17 /* SetupAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				642FE7EF233F2207001C6B17 /* BFFSettingsManager.h */,
+			);
+			path = SetupAssistant;
+			sourceTree = "<group>";
+		};
 		648C10A922AAAD7600B81B9A /* UIKitCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -1445,6 +1456,7 @@
 		91F9DB731B99DDD8001349B2 /* PrivateHeaders */ = {
 			isa = PBXGroup;
 			children = (
+				642FE7EE233F21ED001C6B17 /* SetupAssistant */,
 				6496A5D7230D6E9D0087F8CB /* AccessibilityUtilities */,
 				C8FB547222D3948300B69954 /* MobileCoreServices */,
 				648C10AD22AAAE2400B81B9A /* TextInput */,
@@ -2148,6 +2160,7 @@
 				641EE6C22240C5CA00173FCB /* XCUIDevice+FBHelpers.h in Headers */,
 				641EE6C32240C5CA00173FCB /* FBClassChainQueryParser.h in Headers */,
 				641EE6C42240C5CA00173FCB /* FBMacros.h in Headers */,
+				642FE7F1233F2207001C6B17 /* BFFSettingsManager.h in Headers */,
 				641EE6C52240C5CA00173FCB /* XCTestExpectationDelegate-Protocol.h in Headers */,
 				641EE6C62240C5CA00173FCB /* XCTUIApplicationMonitor-Protocol.h in Headers */,
 				641EE6C72240C5CA00173FCB /* XCElementSnapshot+FBHelpers.h in Headers */,
@@ -2368,6 +2381,7 @@
 				EE35AD4C1E3B77D600A02D78 /* XCTestLog.h in Headers */,
 				EE35AD231E3B77D600A02D78 /* UITapGestureRecognizer-RecordingAdditions.h in Headers */,
 				EE35AD2A1E3B77D600A02D78 /* XCDebugLogDelegate-Protocol.h in Headers */,
+				642FE7F0233F2207001C6B17 /* BFFSettingsManager.h in Headers */,
 				EE35AD1C1E3B77D600A02D78 /* NSString-XCTAdditions.h in Headers */,
 				EE35AD581E3B77D600A02D78 /* XCTestWaiter.h in Headers */,
 				7150348721A6DAD600A0F4BA /* FBImageUtils.h in Headers */,

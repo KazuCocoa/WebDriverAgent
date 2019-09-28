@@ -26,6 +26,7 @@ static NSString *const controllerClassName = @"TIPreferencesController";
 static NSString *const FBKeyboardAutocorrectionKey = @"KeyboardAutocorrection";
 static NSString *const FBKeyboardPredictionKey = @"KeyboardPrediction";
 static NSString *const axSettingsClassName = @"AXSettings";
+static NSString *const bFFSettingsManager = @"BFFSettingsManager";
 
 static BOOL FBShouldUseTestManagerForVisibilityDetection = NO;
 static BOOL FBShouldUseSingletonTestManager = YES;
@@ -209,8 +210,15 @@ static BOOL FBIncludeNonModalElements = NO;
 
   void *handle = dlopen(controllerPrefBundlePath, RTLD_LAZY);
 
-  Class controllerClass = NSClassFromString(controllerClassName);
+  Class bFFSettingsManagerClass = NSClassFromString(bFFSettingsManager);
+  BFFSettingsManager *bffManager = [bFFSettingsManagerClass sharedManager];
+  if (bffManager != nil) {
+    if ([bffManager respondsToSelector:@selector(setUserInterfaceStyleMode:)]) {
+      [bffManager setUserInterfaceStyleMode:1];
+    }
+  }
 
+  Class controllerClass = NSClassFromString(controllerClassName);
   TIPreferencesController *controller = [controllerClass sharedPreferencesController];
   // Auto-Correction in Keyboards
   if ([controller respondsToSelector:@selector(setAutocorrectionEnabled:)]) {
