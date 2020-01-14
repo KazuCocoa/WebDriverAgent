@@ -106,7 +106,7 @@ static NSString* const FBUnknownBundleId = @"unknown";
   NSMutableArray<NSDictionary *> *childrenTrees = [NSMutableArray arrayWithCapacity:children.count];
   [self fb_waitUntilSnapshotIsStable];
   for (XCUIElement* child in children) {
-    XCElementSnapshot *childSnapshot = child.fb_snapshotWithAllAttributes;
+    XCElementSnapshot *childSnapshot = child.fb_snapshotWithAllAttributes ?: child.fb_lastSnapshot;
     if (nil == childSnapshot) {
       [FBLogger logFmt:@"Skipping source dump for '%@' because its snapshot cannot be resolved", child.description];
       continue;
