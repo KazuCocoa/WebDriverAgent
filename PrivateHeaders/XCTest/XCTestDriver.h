@@ -26,6 +26,7 @@
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) XCTestConfiguration *testConfiguration; // @synthesize testConfiguration=_testConfiguration;
 
+// Removed with iOS 12
 + (instancetype)sharedTestDriver;
 
 - (void)runTestConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
