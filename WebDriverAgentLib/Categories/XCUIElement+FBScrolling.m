@@ -29,9 +29,9 @@
 
 const CGFloat FBFuzzyPointThreshold = 20.f; //Smallest determined value that is not interpreted as touch
 const CGFloat FBScrollToVisibleNormalizedDistance = .5f;
-const CGFloat FBTouchEventDelay = 1.f;
-const NSTimeInterval FBAnimationCoolOffTimeout = 2.0;
-const CGFloat FBScrollTouchProportion = 0.75f;
+const CGFloat FBTouchEventDelay = .5f;
+const NSTimeInterval FBAnimationCoolOffTimeout = 1.0;
+const CGFloat FBScrollTouchProportion = 0.5f;
 
 #if !TARGET_OS_TV
 
