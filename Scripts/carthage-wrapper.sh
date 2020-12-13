@@ -32,10 +32,12 @@ if ! [[ $need_workaround_supported_version -ne 1 ]]; then
   # echo 'SUPPORTED_PLATFORMS = iphoneos' >> $xcconfig
 fi
 
-#XCODE_XCCONFIG_FILE="$xcconfig" carthage "$@"
+XCODE_XCCONFIG_FILE="$xcconfig" carthage "$@"
 
 # carthage checkout
 # carthage build # with each SUPPORTED_PLATFORMS and each project. Should specify scheme...
+
+# Below is not 
 
 # simulator
 # /usr/bin/xcrun xcodebuild -project /Users/kazuaki/GitHub/WebDriverAgent/Carthage/Checkouts/CocoaAsyncSocket/CocoaAsyncSocket.xcodeproj -scheme iOS\ Framework -configuration Release -derivedDataPath /Users/kazuaki/Library/Caches/org.carthage.CarthageKit/DerivedData/12.3_12C33/CocoaAsyncSocket/72e0fa9e62d56e5bbb3f67e9cfd5aa85841735bc -sdk iphonesimulator -destination platform=iOS\ Simulator,id=51CDCB06-1EB6-40FF-A450-CE378127874A -destination-timeout 3 ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES build
@@ -43,5 +45,5 @@ fi
 
 
 # real device
- /usr/bin/xcrun xcodebuild -project /Users/kazuaki/GitHub/WebDriverAgent/Carthage/Checkouts/CocoaAsyncSocket/CocoaAsyncSocket.xcodeproj -scheme Mac\ Framework -configuration Release -derivedDataPath /Users/kazuaki/Library/Caches/org.carthage.CarthageKit/DerivedData/12.3_12C33/CocoaAsyncSocket/72e0fa9e62d56e5bbb3f67e9cfd5aa85841735bc ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES archive -archivePath /var/folders/y6/524wp8fx0xj5q1rf6fktjrb00000gn/T/CocoaAsyncSocket SKIP_INSTALL=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=NO CLANG_ENABLE_CODE_COVERAGE=NO STRIP_INSTALLED_PRODUCT=NO
-/usr/bin/xcrun xcodebuild -project /Users/kazuaki/GitHub/WebDriverAgent/Carthage/Checkouts/YYCache/Framework/YYCache.xcodeproj -scheme YYCache\ iOS -configuration Release -derivedDataPath /Users/kazuaki/Library/Caches/org.carthage.CarthageKit/DerivedData/12.3_12C33/YYCache/1.1.2 -sdk iphoneos ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES archive -archivePath /var/folders/y6/524wp8fx0xj5q1rf6fktjrb00000gn/T/YYCache SKIP_INSTALL=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=NO CLANG_ENABLE_CODE_COVERAGE=NO STRIP_INSTALLED_PRODUCT=NO
+# /usr/bin/xcrun xcodebuild -project /Users/kazuaki/GitHub/WebDriverAgent/Carthage/Checkouts/CocoaAsyncSocket/CocoaAsyncSocket.xcodeproj -scheme Mac\ Framework -configuration Release -derivedDataPath /Users/kazuaki/Library/Caches/org.carthage.CarthageKit/DerivedData/12.3_12C33/CocoaAsyncSocket/72e0fa9e62d56e5bbb3f67e9cfd5aa85841735bc ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES archive -archivePath /var/folders/y6/524wp8fx0xj5q1rf6fktjrb00000gn/T/CocoaAsyncSocket SKIP_INSTALL=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=NO CLANG_ENABLE_CODE_COVERAGE=NO STRIP_INSTALLED_PRODUCT=NO
+#/usr/bin/xcrun xcodebuild -project /Users/kazuaki/GitHub/WebDriverAgent/Carthage/Checkouts/YYCache/Framework/YYCache.xcodeproj -scheme YYCache\ iOS -configuration Release -derivedDataPath /Users/kazuaki/Library/Caches/org.carthage.CarthageKit/DerivedData/12.3_12C33/YYCache/1.1.2 -sdk iphoneos ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES archive -archivePath /var/folders/y6/524wp8fx0xj5q1rf6fktjrb00000gn/T/YYCache SKIP_INSTALL=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=NO CLANG_ENABLE_CODE_COVERAGE=NO STRIP_INSTALLED_PRODUCT=NO
